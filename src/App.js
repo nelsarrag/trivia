@@ -1,3 +1,5 @@
+import { Container, Typography } from '@mui/material';
+import { Box } from '@mui/system';
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import FinalScreen from './FinalScreen';
 import Questions from './Questions';
@@ -6,11 +8,23 @@ import Settings from './Settings';
 function App() {
   return (
     <Router>
-      <Routes>
-        <Route path='/' element={<Settings />}/>
-        <Route path='/questions' element={<Questions />}/>
-        <Route path='/score' element={<FinalScreen />}/>
-      </Routes>
+      <Container maxWidth="sm">
+        <Box textAlign="center" mt={5}>
+          <Routes>
+            <Route path="/" element={<Settings />}>
+            {/* <Typography variant="h2" fontWeight="bold" component="div">
+                Quiz app
+              </Typography> */}
+            </Route>
+            <Route path="/questions" element={<Questions />}>
+            
+            </Route>
+            <Route path="/score" element={<FinalScreen />}>
+
+            </Route>
+          </Routes>
+        </Box>
+      </Container>
     </Router>
   );
 }
