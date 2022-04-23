@@ -12,15 +12,10 @@ function App() {
         <Box textAlign="center" mt={5}>
           <Routes>
             <Route path="/" element={<Settings />}>
-            {/* <Typography variant="h2" fontWeight="bold" component="div">
-                Quiz app
-              </Typography> */}
             </Route>
             <Route path="/questions" element={<Questions />}>
-            
             </Route>
             <Route path="/score" element={<FinalScreen />}>
-
             </Route>
           </Routes>
         </Box>
