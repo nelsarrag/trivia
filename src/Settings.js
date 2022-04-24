@@ -4,9 +4,11 @@ import { Fragment } from "react";
 import TextFieldComp from "./TextFieldComp";
 import SelectField from "./SelectField";
 import useAxios from "./useAxios";
+import { useNavigate } from "react-router-dom";
 
 const Settings = () => {
-    const { response, error, loading } = useAxios({ url: "/api_category.php" })
+    const { response, error, loading } = useAxios({ url: "/api_category.php" });
+    const navigate = useNavigate(); 
 
     if(loading) {
         return (
@@ -32,11 +34,12 @@ const Settings = () => {
 
     const typeOptions = [
         { id: "multiple", name: "Multiple Choice" },
-        { id: 'boolean', name: "True or False" },
+        { id: "boolean", name: "True or False" },
     ]
 
     const handleSubmit = e => {
         e.preventDefault();
+        navigate("/questions");
     }
 
     return (
